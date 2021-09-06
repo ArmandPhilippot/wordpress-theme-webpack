@@ -1,0 +1,33 @@
+{
+  "name": "wordpress-theme-webpack",
+  "description": "A WordPress boilerplate to develop themes with webpack.",
+  "version": "0.1.0",
+  "license": "GPL-2.0-or-later",
+  "author": {
+    "name": "Armand Philippot",
+    "email": "contact@armandphilippot.com",
+    "url": "https://www.armandphilippot.com/"
+  },
+  "homepage": "https://github.com/boilerplates-collection/wordpress-theme-webpack#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/boilerplates-collection/wordpress-theme-webpack.git"
+  },
+  "bugs": {
+    "url": "https://github.com/boilerplates-collection/wordpress-theme-webpack/issues"
+  },
+  "keywords": [
+    "WordPress",
+    "theme",
+    "boilerplate"
+  ],
+  "scripts": {
+    "release": "standard-version -s"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^13.1.0",
+    "@commitlint/config-conventional": "^13.1.0",
+    "husky": "^7.0.2",
+    "standard-version": "^9.3.1"
+  }
+}
