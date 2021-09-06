@@ -1,0 +1,15 @@
+# Packages folders
+**/node_modules/**
+**/vendor/**
+
+# Dotenv
+.env
+
+# Folders to ignore
+.vscode
+
+# Files to ignore
+*.log
+*.map
+*.zip
+.eslintcache

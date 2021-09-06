@@ -1,0 +1,35 @@
+{
+	"name": "your-vendor-name/your-package-name",
+	"description": "Your theme description.",
+	"license": "GPL-2.0-or-later",
+	"authors": [
+		{
+			"name": "Firstname Lastname",
+			"email": "your@email.com",
+			"homepage": "https://www.yourWebsite.com/"
+		}
+	],
+	"homepage": "https://github.com/your/repo#readme",
+	"support": {
+		"issues": "https://github.com/your/repo/issues",
+		"source": "https://github.com/your/repo"
+	},
+	"keywords": [
+		"WordPress",
+		"theme"
+	],
+	"type": "wordpress-theme",
+	"require": {
+		"composer/installers": "^1.0.0 || ^2.0.0"
+	},
+	"require-dev": {
+		"wp-coding-standards/wpcs": "^2.3",
+		"squizlabs/php_codesniffer": "^3.5",
+		"phpcompatibility/phpcompatibility-wp": "^2.1",
+		"dealerdirect/phpcodesniffer-composer-installer": "^0.7.0"
+	},
+	"scripts": {
+		"lint": "phpcs --standard=phpcs.xml",
+		"fix": "phpcbf --standard=phpcs.xml"
+	}
+}

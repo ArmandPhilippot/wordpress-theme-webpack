@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<ruleset name="WordPress Coding Standards">
+	<description>PHPCS Ruleset for WordPress Themes.</description>
+	<!-- Check files in this directory and subdirectories. -->
+	<file>.</file>
+	<!-- Exclude some directories. -->
+	<exclude-pattern>*/vendor/*</exclude-pattern>
+	<exclude-pattern>*/node_modules/*</exclude-pattern>
+	<!-- Pass flags to PHPCS:
+		p: Show progress of the run.
+		s: Show sniff codes in all reports.
+		v: Print verbose output.
+	-->
+	<arg value="psv"/>
+	<!-- Strip the filepaths down to the relevant bit. Disabled, bug with VSCode. -->
+	<!-- <arg name="basepath" value="./"/> -->
+	<!-- Only check PHP files. -->
+	<arg name="extensions" value="php"/>
+	<!-- Use the WordPress ruleset -->
+	<rule ref="WordPress" />
+	<!-- Allow theme-specific exceptions to WordPress filename rules. -->
+	<rule ref="WordPress.Files.FileName">
+		<properties>
+			<property name="is_theme" value="true"/>
+		</properties>
+	</rule>
+	<!-- Verify that no WP functions are used which are deprecated or removed. -->
+	<rule ref="WordPress.WP.DeprecatedFunctions">
+		<properties>
+			<property name="minimum_supported_version" value="5.2"/>
+		</properties>
+	</rule>
+	<!-- Check all globals have the expected prefix. -->
+	<rule ref="WordPress.NamingConventions.PrefixAllGlobals">
+		<properties>
+			<property name="prefixes" type="array">
+				<element value="yourprefix" />
+			</property>
+		</properties>
+	</rule>
+	<!-- Check all I18n function calls have the expected text domain. -->
+	<rule ref="WordPress.WP.I18n">
+		<properties>
+			<property name="text_domain" type="array">
+				<element value="yourTextDomain"/>
+			</property>
+			<property name="check_translator_comments" value="true"/>
+		</properties>
+	</rule>
+	<rule ref="WordPress.Arrays.MultipleStatementAlignment">
+		<properties>
+			<!-- No need to adjust alignment of large arrays when the item with the largest key is removed. -->
+			<property name="exact" value="false"/>
+			<!-- Don't align multi-line items if ALL items in the array are multi-line. -->
+			<property name="alignMultilineItems" value="!=100"/>
+			<!-- Array assignment operator should always be on the same line as the array key. -->
+			<property name="ignoreNewlines" value="false"/>
+			<!-- Check the maximum position within a line. -->
+			<property name="maxColumn" value="80"/>
+		</properties>
+	</rule>
+	<rule ref="WordPress.WhiteSpace.ControlStructureSpacing">
+		<properties>
+			<property name="blank_line_check" value="true"/>
+			<property name="blank_line_after_check" value="true"/>
+			<property name="spaces_before_closure_open_paren" value="0"/>
+			<property name="space_before_colon" value="required"/>
+		</properties>
+	</rule>
+	<!-- Enforce PSR1 compatible namespaces. -->
+	<rule ref="PSR1.Classes.ClassDeclaration"/>
+	<rule ref="PSR2.Methods.FunctionClosingBrace"/>
+	<!-- Check code for cross-version PHP compatibility. -->
+	<config name="testVersion" value="5.4-"/>
+	<rule ref="PHPCompatibility">
+		<!-- Exclude PHP constants back-filled by PHPCS. -->
+		<exclude name="PHPCompatibility.Constants.NewConstants.t_finallyFound"/>
+		<exclude name="PHPCompatibility.Constants.NewConstants.t_yieldFound"/>
+		<exclude name="PHPCompatibility.Constants.NewConstants.t_ellipsisFound"/>
+		<exclude name="PHPCompatibility.Constants.NewConstants.t_powFound"/>
+		<exclude name="PHPCompatibility.Constants.NewConstants.t_pow_equalFound"/>
+		<exclude name="PHPCompatibility.Constants.NewConstants.t_spaceshipFound"/>
+		<exclude name="PHPCompatibility.Constants.NewConstants.t_coalesceFound"/>
+		<exclude name="PHPCompatibility.Constants.NewConstants.t_coalesce_equalFound"/>
+		<exclude name="PHPCompatibility.Constants.NewConstants.t_yield_fromFound"/>
+	</rule>
+</ruleset>
