@@ -17,6 +17,7 @@
 		"theme"
 	],
 	"scripts": {
+		"build": "webpack --node-env=production",
 		"fix": "npm-run-all --parallel fix:*",
 		"fix:js": "eslint --ext .js,.jsx --fix",
 		"fix:php": "composer fix",
@@ -25,26 +26,54 @@
 		"lint:js": "eslint --ext .js,.jsx",
 		"lint:php": "composer lint",
 		"lint:scss": "stylelint \"**/*.scss\" --syntax scss --formatter verbose",
-		"release": "standard-version -a -s"
+		"release": "standard-version -a -s",
+		"serve": "webpack serve --node-env=development",
+		"watch": "webpack --watch --progress --node-env=development"
 	},
 	"dependencies": {
+		"dotenv": "^8.6.0",
+		"dotenv-expand": "^5.1.0",
 		"modern-normalize": "^1.1.0"
 	},
 	"devDependencies": {
+		"@babel/core": "^7.15.5",
+		"@babel/preset-env": "^7.15.4",
 		"@commitlint/cli": "^13.1.0",
 		"@commitlint/config-conventional": "^13.1.0",
+		"@wordpress/babel-preset-default": "^6.3.1",
 		"@wordpress/browserslist-config": "^4.1.0",
 		"@wordpress/eslint-plugin": "^9.1.1",
 		"@wordpress/prettier-config": "^1.1.0",
 		"@wordpress/stylelint-config": "^19.1.0",
+		"autoprefixer": "^9.8.6",
+		"babel-loader": "^8.2.2",
 		"browserslist": "^4.17.0",
+		"copy-webpack-plugin": "^9.0.1",
+		"css-loader": "^6.2.0",
+		"css-minimizer-webpack-plugin": "^3.0.2",
+		"dotenv-webpack": "^7.0.3",
 		"eslint": "^7.32.0",
 		"husky": "^7.0.2",
+		"image-minimizer-webpack-plugin": "^2.2.0",
+		"imagemin-gifsicle": "^7.0.0",
+		"imagemin-mozjpeg": "^9.0.0",
+		"imagemin-optipng": "^8.0.0",
+		"imagemin-svgo": "^9.0.0",
 		"lint-staged": "^11.1.2",
+		"mini-css-extract-plugin": "^2.2.2",
 		"npm-run-all": "^4.1.5",
+		"postcss": "^7.0.36",
+		"postcss-loader": "^6.1.1",
 		"prettier": "npm:wp-prettier@^2.2.1-beta-1",
+		"sass": "^1.39.0",
+		"sass-loader": "^12.1.0",
 		"standard-version": "^9.3.1",
+		"style-loader": "^3.2.1",
 		"stylelint": "^13.13.1",
-		"stylelint-config-prettier": "^8.0.2"
+		"stylelint-config-prettier": "^8.0.2",
+		"webpack": "^5.52.0",
+		"webpack-cli": "^4.8.0",
+		"webpack-dev-server": "^4.1.0",
+		"webpack-merge": "^5.8.0"
 	}
 }
