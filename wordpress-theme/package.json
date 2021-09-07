@@ -16,9 +16,27 @@
 		"WordPress",
 		"theme"
 	],
-	"scripts": {},
+	"scripts": {
+		"fix": "npm-run-all --parallel fix:*",
+		"fix:js": "eslint --ext .js,.jsx --fix",
+		"fix:php": "composer fix",
+		"fix:scss": "stylelint \"**/*.scss\" --fix",
+		"lint": "npm-run-all --parallel lint:*",
+		"lint:js": "eslint --ext .js,.jsx",
+		"lint:php": "composer lint",
+		"lint:scss": "stylelint \"**/*.scss\" --syntax scss --formatter verbose"
+	},
 	"dependencies": {
 		"modern-normalize": "^1.1.0"
 	},
-	"devDependencies": {}
+	"devDependencies": {
+		"@wordpress/eslint-plugin": "^9.1.1",
+		"@wordpress/prettier-config": "^1.1.0",
+		"@wordpress/stylelint-config": "^19.1.0",
+		"eslint": "^7.32.0",
+		"npm-run-all": "^4.1.5",
+		"prettier": "npm:wp-prettier@^2.2.1-beta-1",
+		"stylelint": "^13.13.1",
+		"stylelint-config-prettier": "^8.0.2"
+	}
 }
