@@ -29,6 +29,8 @@
 		"lint:scss": "stylelint \"**/*.scss\" --syntax scss --formatter verbose",
 		"release": "standard-version -a -s",
 		"serve": "webpack serve --node-env=development",
+		"translate": "npm-run-all --parallel translate:*",
+		"translate:php": "node ./tools/translate.js",
 		"watch": "webpack --watch --progress --node-env=development"
 	},
 	"dependencies": {
@@ -76,6 +78,7 @@
 		"webpack": "^5.52.0",
 		"webpack-cli": "^4.8.0",
 		"webpack-dev-server": "^4.1.0",
-		"webpack-merge": "^5.8.0"
+		"webpack-merge": "^5.8.0",
+		"wp-pot": "^1.9.9"
 	}
 }
