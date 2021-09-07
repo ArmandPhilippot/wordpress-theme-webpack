@@ -33,9 +33,11 @@
 	"devDependencies": {
 		"@commitlint/cli": "^13.1.0",
 		"@commitlint/config-conventional": "^13.1.0",
+		"@wordpress/browserslist-config": "^4.1.0",
 		"@wordpress/eslint-plugin": "^9.1.1",
 		"@wordpress/prettier-config": "^1.1.0",
 		"@wordpress/stylelint-config": "^19.1.0",
+		"browserslist": "^4.17.0",
 		"eslint": "^7.32.0",
 		"husky": "^7.0.2",
 		"lint-staged": "^11.1.2",
