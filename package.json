@@ -1,7 +1,7 @@
 {
   "name": "wordpress-theme-webpack",
   "description": "A WordPress boilerplate to develop themes with webpack.",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "license": "GPL-2.0-or-later",
   "author": {
     "name": "Armand Philippot",
