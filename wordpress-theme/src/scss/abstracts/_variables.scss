@@ -1,0 +1,52 @@
+//==============================================================================
+// Theme Information
+// @see https://developer.wordpress.org/themes/basics/main-stylesheet-style-css/
+//==============================================================================
+
+$theme_name: "Your-Package-Name";
+$theme_uri: "https://github.com/your/repo";
+$theme_description: "Your theme description.";
+$theme_version: "0.1.0";
+$theme_wordpress_compatibility: "5.2";
+$theme_author: "Firstname Lastname <your@email.com>";
+$theme_author-uri: "https://www.companyWebsite.com/";
+$theme_license: "GNU General Public License v2 or later";
+$theme_license-uri: "http://www.gnu.org/licenses/gpl-2.0.html";
+$theme_domain: "yourTextDomain";
+$theme_domain-path: "/languages/";
+$theme_tags: "editor-style, translation-ready";
+
+//==============================================================================
+// Layout
+//==============================================================================
+
+/// Breakpoints map
+/// @prop {String} keys - Keys are identifiers mapped to a given length
+/// @prop {Map} values - Values are actual breakpoints expressed in pixels
+$breakpoints: (
+	"sm": 320px,
+	"md": 768px,
+	"lg": 1024px,
+) !default;
+
+//=============================================================================
+// Fonts
+//=============================================================================
+
+/* stylelint-disable -- Lowercase is not wanted for fonts name. */
+/// Regular font family
+/// @type List
+$font_sans-serif: (Arial, Helvetica, sans-serif);
+
+/// Monospace font family
+/// @type List
+$font_mono: ("Courier New", Courier, monospace);
+/* stylelint-enable */
+
+//==============================================================================
+// Colors
+//==============================================================================
+
+/// Primary color
+/// @type Color
+$color_primary: hsl(214, 21%, 36%);

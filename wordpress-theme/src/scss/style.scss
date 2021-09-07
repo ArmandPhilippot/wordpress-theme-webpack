@@ -1,0 +1,71 @@
+@charset 'utf-8';
+
+//============================================================================
+// Theme info
+//============================================================================
+@use "base/theme_info";
+
+/*!===========================================================================
+>>> TABLE OF CONTENTS:
+==============================================================================
+	1.0 Vendors
+	2.0 Base
+	3.0 Layout
+	4.0 Components
+	5.0 Pages
+	6.0 Themes
+============================================================================*/
+
+/**
+* 1.0 Vendors
+*
+* Import each vendors files.
+*/
+@use "modern-normalize";
+@use "vendors/vendors";
+
+/**
+* 2.0 Base
+*
+* Define some standard styles and CSS variables (colors, fonts...).
+*/
+@use "base/base";
+@use "base/animations";
+@use "base/colors";
+@use "base/fonts";
+@use "base/helpers";
+@use "base/typography";
+
+/**
+* 3.0 Layout
+*
+* Define website layout.
+*/
+@use "layout/grid";
+@use "layout/header";
+@use "layout/main";
+@use "layout/footer";
+@use "layout/forms";
+@use "layout/navigation";
+
+/**
+* 4.0 Components
+*
+* Define styles for all kind of specific modules like buttons, widgets...
+*/
+@use "components/button";
+
+/**
+* 5.0 Pages
+*
+* Define all pages specific styles.
+*/
+@use "pages/home";
+@use "pages/contact";
+
+/**
+* 6.0 Themes
+*
+* Define themes (like dark mode) specific styles.
+*/
+@use "themes/dark";
