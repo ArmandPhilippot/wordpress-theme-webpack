@@ -18,6 +18,10 @@
 	],
 	"scripts": {
 		"build": "webpack --node-env=production",
+		"bump": "npm-run-all --parallel bump:*",
+		"bump:css": "replace-in-file --configFile=tools/bump/variables.js",
+		"bump:function": "replace-in-file --configFile=tools/bump/functions.js",
+		"bump:readme": "replace-in-file --configFile=tools/bump/readme.js",
 		"fix": "npm-run-all --parallel fix:*",
 		"fix:js": "eslint --ext .js,.jsx --fix",
 		"fix:php": "composer fix",
@@ -84,5 +88,10 @@
 		"webpack-dev-server": "^4.1.0",
 		"webpack-merge": "^5.8.0",
 		"wp-pot": "^1.9.9"
+	},
+	"standard-version": {
+		"scripts": {
+			"postbump": "npm run bump && npm run build && git add -A"
+		}
 	}
 }
