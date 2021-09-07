@@ -17,7 +17,7 @@
 		"theme"
 	],
 	"scripts": {
-		"build": "webpack --node-env=production",
+		"build": "webpack --node-env=production && npm run rtl",
 		"bump": "npm-run-all --parallel bump:*",
 		"bump:css": "replace-in-file --configFile=tools/bump/variables.js",
 		"bump:function": "replace-in-file --configFile=tools/bump/functions.js",
@@ -32,6 +32,10 @@
 		"lint:php": "composer lint",
 		"lint:scss": "stylelint \"**/*.scss\" --syntax scss --formatter verbose",
 		"release": "standard-version -a -s",
+		"rtl": "npm-run-all --parallel rtl:*",
+		"rtl:style": "rtlcss style.css style-rtl.css",
+		"rtl:editor": "rtlcss assets/css/editor-style.css assets/css/editor-style-rtl.css",
+		"rtl:print": "rtlcss assets/css/print.css assets/css/print-rtl.css",
 		"screenshot": "node ./tools/screenshot.js",
 		"serve": "webpack serve --node-env=development",
 		"translate": "npm-run-all --parallel translate:*",
@@ -77,6 +81,7 @@
 		"postcss-loader": "^6.1.1",
 		"prettier": "npm:wp-prettier@^2.2.1-beta-1",
 		"replace-in-file": "^6.2.0",
+		"rtlcss": "^3.3.0",
 		"sass": "^1.39.0",
 		"sass-loader": "^12.1.0",
 		"standard-version": "^9.3.1",
