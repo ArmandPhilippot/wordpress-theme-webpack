@@ -91,6 +91,7 @@ Clone this repo, copy `wordpress-theme` in your WordPress installation ( `wp-con
 5. Edit your `.env` file to suit your project.
 6. Launch `npm run init`
 7. You may want to relaunch `npm install` so that your `package-lock.json` contains the correct information.
+8. Execute `npm run build`: it creates the `style.css` file needed by WordPress to activate the theme.
 
 That's it! You can now start developing your theme.
 
