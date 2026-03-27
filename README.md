@@ -23,7 +23,7 @@ A WordPress boilerplate to develop themes with webpack.
 * [Husky](https://github.com/typicode/husky)
 * [Lint-staged](https://github.com/okonet/lint-staged)
 * [Modern-normalize](https://github.com/sindresorhus/modern-normalize)
-* [PHP_CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer)
+* [PHP_CodeSniffer](https://github.com/PHPCSStandards/PHP_CodeSniffer)
 * [Playwright](https://github.com/microsoft/playwright)
 * [PostCSS](https://postcss.org/)
 * [RTLCSS](https://rtlcss.com/)
